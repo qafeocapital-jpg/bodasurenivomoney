@@ -3,8 +3,8 @@ databases:
     plan: free
 
 services:
-  # 1. Redis Cache (using Render's standard keyvalue service type)
-  - type: keyvalue
+  # 1. Redis Cache
+  - type: redis
     name: nivomoney-redis
     plan: free
 
@@ -20,6 +20,7 @@ services:
         value: "8000"
       - key: REDIS_URL
         fromService:
+          type: redis
           name: nivomoney-redis
           property: connectionString
       - key: DATABASE_URL
