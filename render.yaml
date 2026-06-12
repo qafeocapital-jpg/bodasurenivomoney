@@ -33,7 +33,7 @@ services:
   - type: web
     name: nivomoney-user-app
     runtime: static
-    buildCommand: cd frontend/user-app && npm install && npm run build
+    buildCommand: cd frontend && npm install && npm run build:user
     staticPublishPath: frontend/user-app/dist
     headers:
       - path: /*
@@ -47,7 +47,7 @@ services:
   - type: web
     name: nivomoney-admin-app
     runtime: static
-    buildCommand: cd frontend/admin-app && npm install && npm run build
+    buildCommand: cd frontend && npm install && npm run build:admin
     staticPublishPath: frontend/admin-app/dist
     headers:
       - path: /*
