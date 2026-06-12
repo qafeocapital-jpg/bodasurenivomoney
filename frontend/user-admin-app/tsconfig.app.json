@@ -19,6 +19,12 @@
     /* Path aliases for @nivo/shared - pointing to source files */
     "baseUrl": ".",
     "paths": {
+      "react": ["node_modules/react"],
+      "react/*": ["node_modules/react/*"],
+      "react-dom": ["node_modules/react-dom"],
+      "react-dom/*": ["node_modules/react-dom/*"],
+      "react-router-dom": ["node_modules/react-router-dom"],
+      "react-router-dom/*": ["node_modules/react-router-dom/*"],
       "@nivo/shared": ["../shared/src"],
       "@nivo/shared/*": ["../shared/src/*"],
       "@nivo/shared/components": ["../shared/components"],
