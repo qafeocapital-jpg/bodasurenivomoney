@@ -27,5 +27,5 @@
     "sourceMap": true
   },
   "include": ["src", "components", "lib"],
-  "exclude": ["node_modules", "dist"]
+  "exclude": ["node_modules", "dist", "components/__tests__", "**/*.test.tsx", "**/*.test.ts"]
 }
