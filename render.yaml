@@ -29,11 +29,11 @@ services:
           property: connectionString
 
   # 3. User React App (Static Frontend)
-  - type: static
+  - type: web
     name: nivomoney-user-app
-    plan: free
+    runtime: static
     buildCommand: cd frontend/user-app && npm install && npm run build
-    publishPath: frontend/user-app/dist
+    staticPublishPath: frontend/user-app/dist
     headers:
       - path: /*
         name: Cache-Control
@@ -45,11 +45,11 @@ services:
           property: url
 
   # 4. Admin React App (Static Frontend)
-  - type: static
+  - type: web
     name: nivomoney-admin-app
-    plan: free
+    runtime: static
     buildCommand: cd frontend/admin-app && npm install && npm run build
-    publishPath: frontend/admin-app/dist
+    staticPublishPath: frontend/admin-app/dist
     headers:
       - path: /*
         name: Cache-Control
