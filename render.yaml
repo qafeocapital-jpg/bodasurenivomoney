@@ -1,12 +1,12 @@
 databases:
   - name: nivomoney-db
-    plan: free
+    plan: basic
 
 services:
   # 1. Redis Cache
   - type: redis
     name: nivomoney-redis
-    plan: free
+    plan: starter
     ipAllowList: []
 
   # 2. Unified Go Backend & API Gateway
