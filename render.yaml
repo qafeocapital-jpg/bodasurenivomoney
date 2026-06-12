@@ -1,17 +1,14 @@
-services:
-  # 1. PostgreSQL Database
-  - type: db
-    name: nivomoney-db
+databases:
+  - name: nivomoney-db
     plan: free
-    ipAllowList: []
 
-  # 2. Redis Cache
-  - type: redis
+services:
+  # 1. Redis Cache (using Render's standard keyvalue service type)
+  - type: keyvalue
     name: nivomoney-redis
     plan: free
-    ipAllowList: []
 
-  # 3. Unified Go Backend & API Gateway
+  # 2. Unified Go Backend & API Gateway
   - type: web
     name: nivomoney-backend
     runtime: go
@@ -22,7 +19,7 @@ services:
       - key: PORT
         value: "8000"
       - key: REDIS_URL
-        fromRedis:
+        fromService:
           name: nivomoney-redis
           property: connectionString
       - key: DATABASE_URL
@@ -30,7 +27,7 @@ services:
           name: nivomoney-db
           property: connectionString
 
-  # 4. User React App (Static Frontend)
+  # 3. User React App (Static Frontend)
   - type: web
     name: nivomoney-user-app
     runtime: static
@@ -47,7 +44,7 @@ services:
           name: nivomoney-backend
           property: url
 
-  # 5. Admin React App (Static Frontend)
+  # 4. Admin React App (Static Frontend)
   - type: web
     name: nivomoney-admin-app
     runtime: static
