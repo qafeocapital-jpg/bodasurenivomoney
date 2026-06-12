@@ -1,6 +1,6 @@
 databases:
   - name: nivomoney-db
-    plan: basic
+    plan: basic-256mb
 
 services:
   # 1. Redis Cache
