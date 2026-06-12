@@ -15,7 +15,7 @@ export const DEFAULT_API_BASE_URL = 'http://localhost:8000';
  * This should be used in all apps instead of reading import.meta.env directly.
  */
 export function getApiBaseUrl(): string {
-  return import.meta.env?.VITE_API_URL || DEFAULT_API_BASE_URL;
+  return (import.meta as any).env?.VITE_API_URL || DEFAULT_API_BASE_URL;
 }
 
 // ============================================================================

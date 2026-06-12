@@ -25,5 +25,13 @@
     "fintech"
   ],
   "author": "Nivo Money",
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "optionalDependencies": {
+    "lightningcss-darwin-arm64": "^1.32.0"
+  },
+  "dependencies": {
+    "@types/set-cookie-parser": "^2.4.10",
+    "cookie": "^1.1.1",
+    "set-cookie-parser": "^3.1.0"
+  }
 }
