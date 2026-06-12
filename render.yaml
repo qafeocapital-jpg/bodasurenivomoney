@@ -29,9 +29,8 @@ services:
           property: connectionString
 
   # 3. User React App (Static Frontend)
-  - type: web
+  - type: static
     name: nivomoney-user-app
-    runtime: static
     plan: free
     buildCommand: cd frontend/user-app && npm install && npm run build
     publishPath: frontend/user-app/dist
@@ -46,9 +45,8 @@ services:
           property: url
 
   # 4. Admin React App (Static Frontend)
-  - type: web
+  - type: static
     name: nivomoney-admin-app
-    runtime: static
     plan: free
     buildCommand: cd frontend/admin-app && npm install && npm run build
     publishPath: frontend/admin-app/dist
