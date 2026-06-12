@@ -28,6 +28,12 @@ services:
         fromDatabase:
           name: nivomoney-db
           property: connectionString
+      - key: DATABASE_PASSWORD
+        fromDatabase:
+          name: nivomoney-db
+          property: password
+      - key: JWT_SECRET
+        value: nivo-jwt-secret-key-1234567890-secure-key
 
   # 3. User React App (Static Frontend)
   - type: web
