@@ -14,8 +14,8 @@ services:
     name: nivomoney-backend
     runtime: go
     plan: free
-    buildCommand: go build -o bin/gateway ./gateway/cmd/server
-    startCommand: ./bin/gateway
+    buildCommand: go build -o bin/gateway ./gateway/cmd/server && go build -o bin/identity ./services/identity/cmd/server && go build -o bin/ledger ./services/ledger/cmd/server && go build -o bin/rbac ./services/rbac/cmd/server && go build -o bin/wallet ./services/wallet/cmd/server && go build -o bin/transaction ./services/transaction/cmd/server && go build -o bin/risk ./services/risk/cmd/server && go build -o bin/notification ./services/notification/cmd/server && go build -o bin/simulation ./services/simulation/cmd/server
+    startCommand: ./scripts/start-all-render.sh
     envVars:
       - key: PORT
         value: "8000"
