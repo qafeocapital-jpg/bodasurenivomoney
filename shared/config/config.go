@@ -62,7 +62,7 @@ func Load() (*Config, error) {
 		// Application defaults
 		Environment: getEnv("ENVIRONMENT", "development"),
 		ServiceName: getEnv("SERVICE_NAME", "nivo"),
-		ServicePort: getEnvAsInt("SERVICE_PORT", 8080),
+		ServicePort: getEnvAsInt("PORT", getEnvAsInt("SERVICE_PORT", 8080)),
 		LogLevel:    getEnv("LOG_LEVEL", "info"),
 
 		// Localization defaults (India-centric)
