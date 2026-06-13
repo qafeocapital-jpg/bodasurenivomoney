@@ -14,8 +14,8 @@ services:
     name: nivomoney-backend
     runtime: go
     plan: free
-    buildCommand: go build -o gateway ./gateway/cmd/server
-    startCommand: ./gateway
+    buildCommand: go build -o bin/gateway ./gateway/cmd/server
+    startCommand: ./bin/gateway
     envVars:
       - key: PORT
         value: "8000"
